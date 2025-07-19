@@ -32,4 +32,26 @@ def test_repository():
     assert "VALUES" in cursor.execute.call_args[0][0]
     assert cursor.execute.call_args[0][1] == (username, password, 0)
 
+def test_edit_balance():
+    user_id = 234
+    balance = 100.11
+
+    mock_connection = MockConnection()
+    repo = UserRepository(mock_connection)
+
+    repo.edit_balance(user_id, balance)
+
+    cursor = mock_connection.cursor.return_value
+    print()
+    print(cursor)
+    # Query
+    print(cursor.execute.call_args[0])
+
+    assert "UPDATE users" in cursor.execute.call_args[0][0]
+    assert "SET balance = ?" in cursor.execute.call_args[0][0]
+    assert "WHERE id = ?" in cursor.execute.call_args[0][0]
+    assert cursor.execute.call_args[0][1] == (balance, user_id)
+
+    mock_connection.commit.assert_called_once()
+
 # pytest -s -v src/models/repositories/user_repository_test.py

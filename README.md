@@ -6,3 +6,7 @@ O código atua no contexto de transações bancárias, utilizando a linguagem de
 ```
 pip install pytest==8.2.1
 ```
+### Instalação Bcrypt
+```
+pip install bcrypt==4.1.3
+```

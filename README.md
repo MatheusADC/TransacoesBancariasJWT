@@ -6,7 +6,11 @@ O código atua no contexto de transações bancárias, utilizando a linguagem de
 ```
 pip install pytest==8.2.1
 ```
-### Instalação Bcrypt
+### Instalação do Bcrypt
 ```
 pip install bcrypt==4.1.3
+```
+### Instalação do PyJWT
+```
+pip install PyJWT==2.8.0
 ```

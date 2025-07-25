@@ -14,3 +14,7 @@ pip install bcrypt==4.1.3
 ```
 pip install PyJWT==2.8.0
 ```
+### Instalação do Python Dotenv
+```
+pip install python-dotenv==1.0.1
+```

@@ -10,6 +10,6 @@ class HttpRequest:
     ) -> None:
         self.body = body
         self.headers = headers
-        self.param = params
+        self.params = params
         self.token_infos = token_infos
         
